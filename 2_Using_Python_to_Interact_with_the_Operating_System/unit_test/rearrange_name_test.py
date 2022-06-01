@@ -1,3 +1,5 @@
+#!C:\Users\vitor.honna\AppData\Local\Programs\Python\Python310\python.exe
+
 from rearrange import rearrange_name
 import unittest
 
