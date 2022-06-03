@@ -1,0 +1,7 @@
+--- hello_original.py	2022-06-03 09:40:38.939113300 -0300
++++ hello_fixed.py	2022-06-03 10:10:06.996278800 -0300
+@@ -1 +1,2 @@
+-print('hell0')
++print('hello')
++print('world')
+\ No newline at end of file
