@@ -33,3 +33,40 @@
 ## Reduce the priority of a process in accessing the CPU
 - nice
 
+## Apache benchmark tool
+- ab 
+- Ex: `ab -n 500 site.example.com/` average time of 500 requests
+
+## Change the priority of a group of tasks that are already running
+- `for pid in $(pidof <task_name>); do renice <priority> $pid; done`
+- The priorities range from 0 (highest) to 19 (lowest)
+- `pidof` gets the list of pids
+- `renice` changes the priority
+
+## To figure out how a process got started
+- `ps ax` shows all the running processes on the computer
+- Pipe the results to `less` to be able to scroll through the results: `ps ax | less`
+- `\` is the search key when using `less`
+
+## Look for files in the hard drive
+- `locate <filename>`
+
+## Stop processes without cancelling them completely
+- `killall -STOP <process_name>`
+
+## Restart processes one after the other, not in parallel, checking every second for completion.
+- Here, the condition is met as long as the process exists, and fail when it goes away (then it moves onto the next task)
+- `for pid in $(pidof <task_name>); do while kill -CONT $pid; do sleep 1; done; done`
+
+## Measure a script speed
+- `time <script>`, returns 3 values:
+  - "Real": amount of actual time that it took to execute the command (wall-clock time)
+  - "User": time spent doing operations in the user space
+  - "Sys": time spent doing system-level operations
+
+## Python profiler: pprofile3
+- `pprofile3 -f callgrind -o profile.out <script>` uses the "callgrind" file format and stores the output in the "profile.out" file
+
+## Graphical interface to look into the files
+- `kcachegrind <filename.out>`
+
