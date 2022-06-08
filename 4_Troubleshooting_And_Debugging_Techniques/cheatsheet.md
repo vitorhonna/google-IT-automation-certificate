@@ -70,3 +70,37 @@
 ## Graphical interface to look into the files
 - `kcachegrind <filename.out>`
 
+## Test the health of the RAM
+- `memtest86`
+
+## Information about network connections
+- `netstat` gets information depending on the flags passed:
+  - `-n` numerical addresses instead of resolving host names
+  - `-l` only check sockets that are listening for connection
+  - `-p` print the process ID and name to which each socket belongs
+
+## Check memory leaks
+- `valgrind` (linux / mac)
+- Dr. Memory (windows / linux)
+
+## Python interactive debugger
+- `pdb3 <program.py + parameters>`
+- use `next` to run the next line
+- use `continue` to run the program until it continues or crashes
+- use `print(<variable>)` to print
+- 
+
+## Python module to enable/disable printing debug messages
+- `logging`
+
+## Generate Core files (store all the information related to the crash so it can be debugged)
+- `ulimit -c unlimited` 
+
+## Debugger
+- `gdb -c core <executable>` (core is the Core file created with ulimit)
+- `backtrace` command, show the functions call history (how the program reached the failed state)
+- use `up` to access the previous functions
+- use `list` to show the lines around the current line
+- use `print <variable>` to print
+
+
