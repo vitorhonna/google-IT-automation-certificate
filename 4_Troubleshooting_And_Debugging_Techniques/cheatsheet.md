@@ -80,7 +80,7 @@
   - `-p` print the process ID and name to which each socket belongs
 
 ## Check memory leaks
-- `valgrind` (linux / mac)
+- `valgrind` (linux / mac) for C/C++
 - Dr. Memory (windows / linux)
 
 ## Python interactive debugger
