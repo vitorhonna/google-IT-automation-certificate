@@ -1,3 +1,5 @@
+# Puppet
+
 ## Install Puppet (linux)
 - `sudo apt install puppet-master`
 
