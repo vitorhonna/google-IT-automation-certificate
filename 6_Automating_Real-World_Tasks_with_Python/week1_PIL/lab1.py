@@ -6,11 +6,12 @@ path = r'./images'
 
 imageNames = [f for f in listdir(path) if isfile(join(path, f))]
 
-# for imageName in imageNames:
-#     print(imageName)
+for imageName in imageNames:
+    try:
+        with Image.open(f"{path}/{imageName}") as im:
+            # print(im.format, im.size, im.mode)
+            processed_image = im.resize((128, 128)).rotate(-90).convert("RGB")
+            processed_image.save('./opt/icons/'+imageName+'_processed.jpg')
+    except:
+        print("cannot process:", imageName)
 
-imageName = r'ic_add_location_black_48dp'
-
-imageObject = Image.open(f"{path}/{imageName}")
-new_image = imageObject.rotate(90)
-new_image.save(f"dfgfgfdgfdgdfgdf_processed.jpg")
