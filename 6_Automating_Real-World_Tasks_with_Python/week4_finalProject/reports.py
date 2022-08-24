@@ -1,21 +1,14 @@
 #!/usr/bin/env python3
 
-from reportlab.graphics.charts.piecharts import Pie
-from reportlab.graphics.shapes import Drawing
-from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate
-from reportlab.platypus import Paragraph, Spacer, Table, Image
+from reportlab.platypus import Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
-from datetime import date
 
 
-def generate_report(data):
-    report = SimpleDocTemplate("processed.pdf")
+def generate_report(attachment, title, paragraph):
+    report = SimpleDocTemplate(attachment)
     styles = getSampleStyleSheet()
-    report_title = Paragraph(
-        f"Processed Update on {date.today().strftime('%b %d, %Y')}<br/><br/>", styles["h1"])
-    body = ''
-    for item in data:
-        body += f"name: {item['name']}<br/>weight: {item['weight']}<br/><br/>"
-    report_body = Paragraph(body)
-    report.build([report_title, report_body])
+    report_title = Paragraph(title, styles["h1"])
+    report_body = Paragraph(paragraph, styles["BodyText"])
+    empty_line = Spacer(1, 20)
+    report.build([report_title, empty_line, report_body, empty_line])
