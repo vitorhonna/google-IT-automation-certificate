@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "car": { "car_make": "Ford", "car_model": "Club Wagon", "car_year": 1997 },
+        "price": "$5179.39",
+        "total_sales": 446
+    },
+    {
+        "id": 2,
+        "car": { "car_make": "Acura", "car_model": "TL", "car_year": 2005 },
+        "price": "$14558.19",
+        "total_sales": 589
+    },
+    {
+        "id": 3,
+        "car": { "car_make": "Volkswagen", "car_model": "Jetta", "car_year": 2005 },
+        "price": "$14879.11",
+        "total_sales": 825
+    }
+]
